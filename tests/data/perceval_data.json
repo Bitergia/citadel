@@ -1,0 +1,1304 @@
+[
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Tue Aug 18 18:08:27 2015 +0200",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Tue Aug 18 18:08:27 2015 +0200",
+            "commit": "dc78c254e464ff334892e0448a23e4cfbfc637a3",
+            "files": [
+                {
+                    "action": "A",
+                    "added": "10",
+                    "file": ".gitignore",
+                    "indexes": [
+                        "0000000",
+                        "ceaedd5"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "1",
+                    "file": "AUTHORS",
+                    "indexes": [
+                        "0000000",
+                        "a67f214"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "674",
+                    "file": "LICENSE",
+                    "indexes": [
+                        "0000000",
+                        "94a9ed0"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "Initial import",
+            "parents": [],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.817349,
+        "updated_on": 1439914107.0,
+        "uuid": "812c06b9faf69a86de0fc3da890bb8e80991a506"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Tue Aug 18 18:11:40 2015 +0200",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Tue Aug 18 18:11:40 2015 +0200",
+            "commit": "57bc204822832a6c23ac7883e5392f4da6f4ca37",
+            "files": [
+                {
+                    "action": "A",
+                    "added": "0",
+                    "file": "tests/__init__.py",
+                    "indexes": [
+                        "0000000",
+                        "e69de29"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "31",
+                    "file": "tests/run_tests.py",
+                    "indexes": [
+                        "0000000",
+                        "f254e50"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100755"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "[tests] Set up unit tests framework",
+            "parents": [
+                "dc78c254e464ff334892e0448a23e4cfbfc637a3"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.820998,
+        "updated_on": 1439914300.0,
+        "uuid": "8ef1cdec050d8cd54473e1046a33c862216127cf"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Tue Aug 18 18:54:45 2015 +0200",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Tue Aug 18 18:54:45 2015 +0200",
+            "commit": "2355d18310d8e15c8e5d44f688d757df33b0e4be",
+            "files": [
+                {
+                    "action": "A",
+                    "added": "74",
+                    "file": "bin/perceval",
+                    "indexes": [
+                        "0000000",
+                        "cb7c49a"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100755"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "[perceval] Add perceval script",
+            "parents": [
+                "57bc204822832a6c23ac7883e5392f4da6f4ca37"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.822393,
+        "updated_on": 1439916885.0,
+        "uuid": "903be190a192081ad8105d8e7774684e076704e3"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Thu Aug 20 19:01:05 2015 +0200",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Thu Aug 20 19:01:05 2015 +0200",
+            "commit": "589bc515db1632959f6edcb0c4bc2fe43ee51b74",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "47",
+                    "file": "bin/perceval",
+                    "indexes": [
+                        "cb7c49a",
+                        "4b0cbd7"
+                    ],
+                    "modes": [
+                        "100755",
+                        "100755"
+                    ],
+                    "removed": "1"
+                }
+            ],
+            "message": "[perceval] Support configuration file",
+            "parents": [
+                "2355d18310d8e15c8e5d44f688d757df33b0e4be"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.825037,
+        "updated_on": 1440090065.0,
+        "uuid": "198c30753d2c0b44eb24e205feb087e57d2ccebc"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Fri Aug 21 11:17:01 2015 +0200",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Fri Aug 21 11:17:01 2015 +0200",
+            "commit": "35bfeb3c4037a31f4f6a885243f213a104772a04",
+            "files": [
+                {
+                    "action": "A",
+                    "added": "32",
+                    "file": "setup.py",
+                    "indexes": [
+                        "0000000",
+                        "f7f1200"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100755"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "Add setup.py",
+            "parents": [
+                "589bc515db1632959f6edcb0c4bc2fe43ee51b74"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.826532,
+        "updated_on": 1440148621.0,
+        "uuid": "722dcafa88c7f535b0fe4b618505dcb2cb172a6c"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Fri Aug 21 11:18:21 2015 +0200",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Fri Aug 21 11:18:21 2015 +0200",
+            "commit": "f6238e73f5bba86efd5e5fdd55a84b2b4f7348ec",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "5",
+                    "file": "bin/perceval",
+                    "indexes": [
+                        "4b0cbd7",
+                        "f3fd8d3"
+                    ],
+                    "modes": [
+                        "100755",
+                        "100755"
+                    ],
+                    "removed": "3"
+                },
+                {
+                    "action": "A",
+                    "added": "0",
+                    "file": "perceval/__init__.py",
+                    "indexes": [
+                        "0000000",
+                        "e69de29"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "44",
+                    "file": "perceval/backend.py",
+                    "indexes": [
+                        "0000000",
+                        "27db0e6"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "43",
+                    "file": "tests/test_backend.py",
+                    "indexes": [
+                        "0000000",
+                        "e562664"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "[backend] Add get_argument_parser() class method",
+            "parents": [
+                "35bfeb3c4037a31f4f6a885243f213a104772a04"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.82743,
+        "updated_on": 1440148701.0,
+        "uuid": "2f293422ca8f1f101e8338b401e74757d4c8a1e8"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Fri Aug 21 11:47:00 2015 +0200",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Fri Aug 21 11:47:00 2015 +0200",
+            "commit": "2ff7af1b6e5b202697518c307f4d4d68a5cb1b7b",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "1",
+                    "file": ".gitignore",
+                    "indexes": [
+                        "ceaedd5",
+                        "19fd4e1"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "1"
+                }
+            ],
+            "message": "Update gitignore blacklist",
+            "parents": [
+                "f6238e73f5bba86efd5e5fdd55a84b2b4f7348ec"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.828165,
+        "updated_on": 1440150420.0,
+        "uuid": "5ad89f47d146ad652ddec1c8ea16c70ee65035ca"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Fri Aug 21 12:26:51 2015 +0200",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Fri Aug 21 12:26:51 2015 +0200",
+            "commit": "4e34582f9cfd8ec64841d5db5333c598a4082632",
+            "files": [
+                {
+                    "action": "A",
+                    "added": "36",
+                    "file": "perceval/errors.py",
+                    "indexes": [
+                        "0000000",
+                        "678fba3"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "72",
+                    "file": "tests/test_errors.py",
+                    "indexes": [
+                        "0000000",
+                        "73f55f4"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "[errors] Add Perceval base error class",
+            "parents": [
+                "2ff7af1b6e5b202697518c307f4d4d68a5cb1b7b"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.828947,
+        "updated_on": 1440152811.0,
+        "uuid": "b005874466ec37c3ab51b9f5484201161d9f0a24"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Tue Nov 17 14:59:25 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Wed Nov 18 14:41:17 2015 +0100",
+            "commit": "b0f6eb81d9b1dc5f77dce9954744016dfbb3cb4a",
+            "files": [
+                {
+                    "action": "A",
+                    "added": "0",
+                    "file": "perceval/backends/__init__.py",
+                    "indexes": [
+                        "0000000",
+                        "e69de29"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "136",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "0000000",
+                        "13d86f6"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "91",
+                    "file": "tests/data/bugzilla_bug.xml",
+                    "indexes": [
+                        "0000000",
+                        "6702ee4"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "362",
+                    "file": "tests/data/bugzilla_bug_activity.html",
+                    "indexes": [
+                        "0000000",
+                        "83f8204"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "6",
+                    "file": "tests/data/bugzilla_buglist.csv",
+                    "indexes": [
+                        "0000000",
+                        "5034637"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "8",
+                    "file": "tests/data/bugzilla_version.xml",
+                    "indexes": [
+                        "0000000",
+                        "104d807"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "214",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "0000000",
+                        "830484d"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "[bugzilla] Add a Bugzilla client\n\nThis client allows to get data from a Bugzilla server (versions\n3.x and 4.x). Currently, it allows to get a summary of bugs and\nthe details and activity of a bug.\n\nUnit tests are also added.",
+            "parents": [
+                "4e34582f9cfd8ec64841d5db5333c598a4082632"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.829992,
+        "updated_on": 1447854077.0,
+        "uuid": "6baa5b34c71235d1db035e4c85e7cba042346caa"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Tue Nov 17 19:54:34 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Wed Nov 18 14:41:21 2015 +0100",
+            "commit": "47f9657b7e0cdb63c7c71aaba2edf0ce772145fe",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "6",
+                    "file": "perceval/errors.py",
+                    "indexes": [
+                        "678fba3",
+                        "88ebcbd"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "M",
+                    "added": "11",
+                    "file": "tests/test_errors.py",
+                    "indexes": [
+                        "73f55f4",
+                        "5671d24"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "1"
+                }
+            ],
+            "message": "[errors] Add InvalidDateError exception",
+            "parents": [
+                "b0f6eb81d9b1dc5f77dce9954744016dfbb3cb4a"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.830847,
+        "updated_on": 1447854081.0,
+        "uuid": "bd3e06b3072c3882046fae41719bbc202a4b1dcc"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Tue Nov 17 20:06:29 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Wed Nov 18 14:41:21 2015 +0100",
+            "commit": "740ca3d73893db8cf712b2dfff0df3af1600ae9b",
+            "files": [
+                {
+                    "action": "A",
+                    "added": "47",
+                    "file": "perceval/utils.py",
+                    "indexes": [
+                        "0000000",
+                        "5eeaad6"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "73",
+                    "file": "tests/test_utils.py",
+                    "indexes": [
+                        "0000000",
+                        "5941939"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "[utils] Add str_to_datetime() function\n\nThis function formats strings into datetime objects. Function\ntaken from sortinghat source code.",
+            "parents": [
+                "47f9657b7e0cdb63c7c71aaba2edf0ce772145fe"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.831657,
+        "updated_on": 1447854081.0,
+        "uuid": "c5478d147980f3c92541b72780c5dd1b968a5cce"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Wed Nov 18 10:59:52 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Wed Nov 18 14:41:21 2015 +0100",
+            "commit": "d1253dd9876bb76e938a861acaceaae95241b46d",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "6",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "13d86f6",
+                        "cd36f9a"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "2"
+                },
+                {
+                    "action": "M",
+                    "added": "5",
+                    "file": "perceval/utils.py",
+                    "indexes": [
+                        "5eeaad6",
+                        "2cc4de2"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "M",
+                    "added": "6",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "830484d",
+                        "7a780ce"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "4"
+                }
+            ],
+            "message": "[bugzilla] Use datetime objects instead of strings\n\nDates will be given using datetime objects. For this reason,\na new variable DEFAULT_DATETIME is available (defined in 'utils'\nmodule) to set default dates when they are required.",
+            "parents": [
+                "740ca3d73893db8cf712b2dfff0df3af1600ae9b"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.832614,
+        "updated_on": 1447854081.0,
+        "uuid": "3b2843bec4a5395d0ab39ad2be715a403ba04723"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Wed Nov 18 13:28:47 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Wed Nov 18 14:41:24 2015 +0100",
+            "commit": "2534e534e24b71868b72c19107f787d5c8d690cf",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "57",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "cd36f9a",
+                        "a1fb31b"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "1"
+                },
+                {
+                    "action": "M",
+                    "added": "1",
+                    "file": "perceval/utils.py",
+                    "indexes": [
+                        "2cc4de2",
+                        "13e2c8d"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "1"
+                },
+                {
+                    "action": "A",
+                    "added": "3",
+                    "file": "tests/data/bugzilla_buglist_next.csv",
+                    "indexes": [
+                        "0000000",
+                        "9bf9b05"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "M",
+                    "added": "128",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "7a780ce",
+                        "ab8a960"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "5"
+                }
+            ],
+            "message": "[bugzilla] Add Bugzilla backend class\n\nSo far, this class only obtains the list of bugs stored in a\nBugzilla repository.",
+            "parents": [
+                "d1253dd9876bb76e938a861acaceaae95241b46d"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.833732,
+        "updated_on": 1447854084.0,
+        "uuid": "949d0413f642b9095a03d066d05f58bf2ef3b865"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Wed Nov 18 14:31:13 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Wed Nov 18 14:41:28 2015 +0100",
+            "commit": "0ad102623646fe165fe54798b190e7dfab73fedd",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "4",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "a1fb31b",
+                        "9e6a9ca"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "4"
+                },
+                {
+                    "action": "M",
+                    "added": "10",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "ab8a960",
+                        "3e7422d"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "5"
+                }
+            ],
+            "message": "[bugzilla] Replace bug() by bugs() to fetch a list of bugs",
+            "parents": [
+                "2534e534e24b71868b72c19107f787d5c8d690cf"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.835102,
+        "updated_on": 1447854088.0,
+        "uuid": "ce6f87014ea1e6e38ed3a5184397181b56573a5f"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Wed Nov 18 20:17:31 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Thu Nov 19 14:08:48 2015 +0100",
+            "commit": "9b6bcf8bdbb3d261998a2231531d37cbd10d6c0b",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "6",
+                    "file": "perceval/errors.py",
+                    "indexes": [
+                        "88ebcbd",
+                        "4034b08"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "M",
+                    "added": "52",
+                    "file": "perceval/utils.py",
+                    "indexes": [
+                        "13e2c8d",
+                        "ade6374"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "3"
+                },
+                {
+                    "action": "A",
+                    "added": "13",
+                    "file": "tests/data/xml_invalid.xml",
+                    "indexes": [
+                        "0000000",
+                        "5f4ebe0"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "M",
+                    "added": "12",
+                    "file": "tests/test_errors.py",
+                    "indexes": [
+                        "5671d24",
+                        "8fd808c"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "4"
+                },
+                {
+                    "action": "M",
+                    "added": "41",
+                    "file": "tests/test_utils.py",
+                    "indexes": [
+                        "5941939",
+                        "11ed198"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "2"
+                }
+            ],
+            "message": "[utils] Add xml_to_dict() function\n\nThis function converts a XML stream to a Python dictionary.\nWhen a parsing error occurs, a ParseError exception is raised.\nThis exception is added with this commit.\n\nUnit tests were also added.",
+            "parents": [
+                "0ad102623646fe165fe54798b190e7dfab73fedd"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.837048,
+        "updated_on": 1447938528.0,
+        "uuid": "82d1243497c5f70d52fbc87926dc0e892a7eaec4"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Thu Nov 19 17:36:48 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Thu Nov 19 18:12:47 2015 +0100",
+            "commit": "525f43db7764d5f3cbc846fa3bf48a0c74550e4e",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "29",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "9e6a9ca",
+                        "e5867b1"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "1"
+                },
+                {
+                    "action": "M",
+                    "added": "1",
+                    "file": "tests/data/bugzilla_buglist_next.csv",
+                    "indexes": [
+                        "9bf9b05",
+                        "6f24639"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "1"
+                },
+                {
+                    "action": "A",
+                    "added": "252",
+                    "file": "tests/data/bugzilla_bugs_details.xml",
+                    "indexes": [
+                        "0000000",
+                        "b3be715"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "99",
+                    "file": "tests/data/bugzilla_bugs_details_next.xml",
+                    "indexes": [
+                        "0000000",
+                        "a471013"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "106",
+                    "file": "tests/data/bugzilla_bugs_details_not_valid.xml",
+                    "indexes": [
+                        "0000000",
+                        "e896c89"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "M",
+                    "added": "26",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "3e7422d",
+                        "9a85751"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "[bugzilla] Add parse_bugs_details()\n\nThis static method parses a XML stream that stores the bug details\nfrom a Bugzilla repository.",
+            "parents": [
+                "9b6bcf8bdbb3d261998a2231531d37cbd10d6c0b"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.838918,
+        "updated_on": 1447953167.0,
+        "uuid": "129d8ff5fe9035361f115da0cad190e5d5af01fb"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Thu Nov 19 18:14:17 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Thu Nov 19 18:14:17 2015 +0100",
+            "commit": "2f7428028f377104a301c7bc7ba92ae3acddfb5c",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "12",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "e5867b1",
+                        "db8569c"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "2"
+                },
+                {
+                    "action": "M",
+                    "added": "12",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "9a85751",
+                        "880bb7f"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "0"
+                }
+            ],
+            "message": "[bugzilla] Convert parse_buglist() to a static method",
+            "parents": [
+                "525f43db7764d5f3cbc846fa3bf48a0c74550e4e"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.841875,
+        "updated_on": 1447953257.0,
+        "uuid": "0e1c828fb4965e9afa2786e71101580d56f5b8bc"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Mon Nov 23 17:32:18 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Mon Nov 23 17:35:47 2015 +0100",
+            "commit": "6c06ae24ac5512de3260f0c3cea615ba466bdf01",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "19",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "db8569c",
+                        "06e0045"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "3"
+                },
+                {
+                    "action": "M",
+                    "added": "60",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "880bb7f",
+                        "f1c7e8d"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "18"
+                }
+            ],
+            "message": "[bugzilla] Add support to fetch the bug details\n\nWhen fetch() method is called, it gets first the list of bugs\nand then, the details of each bug. Each bug is marshalled\nto a dict object.",
+            "parents": [
+                "2f7428028f377104a301c7bc7ba92ae3acddfb5c"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.843036,
+        "updated_on": 1448296547.0,
+        "uuid": "5cc488e08a44030b0ec68154f8f2af462bea2a6c"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Mon Nov 23 19:38:32 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Mon Nov 23 21:05:28 2015 +0100",
+            "commit": "d87f2ed0d3d98832348602a8105bbccf5f812620",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "79",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "06e0045",
+                        "078a3a2"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "374",
+                    "file": "tests/data/bugzilla_bug_activity_empty.html",
+                    "indexes": [
+                        "0000000",
+                        "08887ae"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "A",
+                    "added": "370",
+                    "file": "tests/data/bugzilla_bug_activity_not_valid.html",
+                    "indexes": [
+                        "0000000",
+                        "cc0b204"
+                    ],
+                    "modes": [
+                        "000000",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "M",
+                    "added": "47",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "f1c7e8d",
+                        "549f40e"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "1"
+                }
+            ],
+            "message": "[bugzilla] Add parse_bug_activity()\n\nThis static method parses a HTML stream that stores the activity\nof a bug.",
+            "parents": [
+                "6c06ae24ac5512de3260f0c3cea615ba466bdf01"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.84396,
+        "updated_on": 1448309128.0,
+        "uuid": "4140261725c801f6cec2e7b6c5c2c23e913dd2a9"
+    },
+    {
+        "backend_name": "Git",
+        "backend_version": "0.11.1",
+        "category": "commit",
+        "classified_fields_filtered": null,
+        "data": {
+            "Author": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "AuthorDate": "Mon Nov 23 21:37:16 2015 +0100",
+            "Commit": "Santiago Due\u00f1as <sduenas@bitergia.com>",
+            "CommitDate": "Mon Nov 23 21:38:51 2015 +0100",
+            "commit": "8cc0df2f3ffe92104160749ffe98e537f25977a0",
+            "files": [
+                {
+                    "action": "M",
+                    "added": "7",
+                    "file": "perceval/backends/bugzilla.py",
+                    "indexes": [
+                        "078a3a2",
+                        "ce2fee9"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "0"
+                },
+                {
+                    "action": "M",
+                    "added": "68",
+                    "file": "tests/test_bugzilla.py",
+                    "indexes": [
+                        "549f40e",
+                        "32d034b"
+                    ],
+                    "modes": [
+                        "100644",
+                        "100644"
+                    ],
+                    "removed": "18"
+                }
+            ],
+            "message": "[bugzilla] Retrieve the activity of each bug\n\nCalling to fetch() produces a list of bugs that includes\ntheir details and activity.",
+            "parents": [
+                "d87f2ed0d3d98832348602a8105bbccf5f812620"
+            ],
+            "refs": []
+        },
+        "origin": "https://github.com/chaoss/grimoirelab-perceval",
+        "perceval_version": "0.12.17",
+        "tag": "https://github.com/chaoss/grimoirelab-perceval",
+        "timestamp": 1561655443.844784,
+        "updated_on": 1448311131.0,
+        "uuid": "a439c801f3fda80f5dcb995c52a8f4ebea7272f6"
+    }
+]
