@@ -60,6 +60,26 @@ class ElasticsearchStorage(StorageEngine):
                                            verify_certs=self.VERIFY_CERTS,
                                            connection_class=RequestsHttpConnection)
 
+    def set_alias(self, alias, index_name):
+        """Set an alias for a given index.
+
+        :param alias: name of the alias
+        :param index_name: name of the index
+        """
+        try:
+            self.elasticsearch.indices.update_aliases(
+                {
+                    "actions": [
+                        {"add": {"index": index_name, "alias": alias}}
+                    ]
+                }
+            )
+        except es_exceptions.RequestError as ex:
+            info_error = ex.info['error']
+            msg = "Alias {} not set, {}, {}".format(index_name, info_error['type'], info_error['reason'])
+            logger.error(msg)
+            raise StorageEngineError(cause=msg)
+
     def create_index(self, index_name, mapping):
         """Create an index in ElasticSearch database.
 

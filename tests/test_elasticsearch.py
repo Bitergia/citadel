@@ -39,6 +39,7 @@ def read_file(filename, mode='r'):
 
 INDEX_NAME = 'test_citadel'
 WRONG_INDEX_NAME = '#test_citadel'
+INDEX_ALIAS = 'citadel'
 CONFIG_FILE = 'tests.conf'
 
 ERROR_INDEX_ALREADY_EXISTS = "Index test_citadel already exists!"
@@ -47,6 +48,8 @@ ERROR_INDEX_NOT_VALID_NAME = "Index #test_citadel not created, invalid_index_nam
 ERROR_WRITE_IMMENSE_TERM = 'Bulk error on test_citadel, illegal_argument_exception, Document ' \
                            'contains at least one immense term in field="backend_name" (whose UTF8 ' \
                            'encoding is longer than the max length 32766)'
+ERROR_ALIAS_IN_USE = "Alias test_citadel not set, invalid_alias_name_exception, " \
+                     "Invalid alias name [test_citadel], an index exists with the same name as the alias"
 
 QUERY_MATCH_ALL = {
     "query": {
@@ -198,6 +201,31 @@ class TestElasticsearchStorage(unittest.TestCase):
             storage.create_index(self.index, PERCEVAL_MAPPING)
 
         self.assertEqual(ex.exception.msg, ERROR_INDEX_NOT_VALID_NAME)
+
+    def test_set_alias(self):
+        """Test whether an alias is set"""
+
+        self.index = INDEX_NAME
+        storage = ElasticsearchStorage(self.es_url)
+
+        storage.create_index(self.index, PERCEVAL_MAPPING)
+        self.assertFalse(storage.elasticsearch.indices.exists(index=INDEX_ALIAS))
+        storage.set_alias(INDEX_ALIAS, INDEX_NAME)
+        self.assertTrue(storage.elasticsearch.indices.exists(index=INDEX_ALIAS))
+
+    def test_set_alias_error(self):
+        """Test whether a StorageEngineError error is thrown when the alias is not set"""
+
+        self.index = INDEX_NAME
+        storage = ElasticsearchStorage(self.es_url)
+
+        storage.create_index(self.index, PERCEVAL_MAPPING)
+        self.assertFalse(storage.elasticsearch.indices.exists(index=INDEX_ALIAS))
+
+        with self.assertRaises(StorageEngineError) as ex:
+            storage.set_alias(INDEX_NAME, INDEX_NAME)
+
+        self.assertEqual(ex.exception.msg, ERROR_ALIAS_IN_USE)
 
     def test_write(self):
         """Test whether items are written to the index"""
