@@ -25,11 +25,14 @@ class StorageEngine:
 
     This class allows to perform write operations on storage engines.
     """
-    def write(self, resource, data, chunk_size=None):
+    def write(self, resource, data, item_type, chunk_size=None, field_id=None):
         """Write method to be redefined by subclasses
 
         :param resource: the location where the data is written
         :param data: the data to be written
+        :param item_type: type of the item
         :param chunk_size: size of data chunks
+        :param field_id: field representing the ID of the item. If None the
+            ID generation is delegated to the storage engine
         """
         raise NotImplementedError

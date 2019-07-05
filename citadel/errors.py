@@ -40,3 +40,9 @@ class StorageEngineError(BaseError):
     """Generic error for storage engines"""
 
     message = "%(cause)s"
+
+
+class EventsError(BaseError):
+    """Generic error for events"""
+
+    message = "%(cause)s"

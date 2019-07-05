@@ -28,8 +28,7 @@ import unittest
 from elasticsearch import Elasticsearch
 
 from citadel.errors import StorageEngineError
-from citadel.storage_engines.elasticsearch import (PERCEVAL_MAPPING,
-                                                   ElasticsearchStorage)
+from citadel.storage_engines.elasticsearch import ElasticsearchStorage
 
 
 def read_file(filename, mode='r'):
@@ -40,6 +39,7 @@ def read_file(filename, mode='r'):
 
 INDEX_NAME = 'test_citadel'
 WRONG_INDEX_NAME = '#test_citadel'
+INDEX_ALIAS = 'citadel'
 CONFIG_FILE = 'tests.conf'
 
 ERROR_INDEX_ALREADY_EXISTS = "Index test_citadel already exists!"
@@ -48,12 +48,103 @@ ERROR_INDEX_NOT_VALID_NAME = "Index #test_citadel not created, invalid_index_nam
 ERROR_WRITE_IMMENSE_TERM = 'Bulk error on test_citadel, illegal_argument_exception, Document ' \
                            'contains at least one immense term in field="backend_name" (whose UTF8 ' \
                            'encoding is longer than the max length 32766)'
+ERROR_ALIAS_IN_USE = "Alias test_citadel not set, invalid_alias_name_exception, " \
+                     "Invalid alias name [test_citadel], an index exists with the same name as the alias"
 
 QUERY_MATCH_ALL = {
     "query": {
         "match_all": {}
     }
 }
+
+
+PERCEVAL_MAPPING = """
+    {
+      "mappings": {
+        "items": {
+            "dynamic": false,
+            "properties": {
+                "backend_name" : {
+                    "type" : "keyword"
+                },
+                "backend_version" : {
+                    "type" : "keyword"
+                },
+                "category" : {
+                    "type" : "keyword"
+                },
+                "classified_fields_filtered" : {
+                    "type" : "keyword"
+                },
+                "data" : {
+                    "properties":{}
+                },
+                "origin" : {
+                    "type" : "keyword"
+                },
+                "perceval_version" : {
+                    "type" : "keyword"
+                },
+                "tag" : {
+                    "type" : "keyword"
+                },
+                "timestamp" : {
+                    "type" : "long"
+                },
+                "updated_on" : {
+                    "type" : "long"
+                },
+                "uuid" : {
+                    "type" : "keyword"
+                }
+            }
+        }
+      }
+    }
+    """
+
+
+PERCEVAL_MAPPING_WRONG = """
+    {
+      "mappings": {
+        "items": {
+            "dynamic": false,
+            "properties": {
+                "backend_name" : {
+                    "type" : "keyword"
+                },
+                "backend_version" : {
+                    "type" : "keyword"
+                },
+                "category" : {
+                    "type" : "keyword"
+                },
+                "data" : {
+                    "properties":{}
+                },
+                "origin" : {
+                    "type" : "keyword"
+                },
+                "perceval_version" : {
+                    "type" : "keyword"
+                },
+                "tag" : {
+                    "type" : "keyword"
+                },
+                "timestamp" : {
+                    "type" : "long"
+                },
+                "updated_on" : {
+                    "type" : "long"
+                },
+                "uuid" : {
+                    "type" : "keyword"
+                }
+            }
+        }
+      }
+    }
+    """
 
 
 class TestElasticsearchStorage(unittest.TestCase):
@@ -111,6 +202,31 @@ class TestElasticsearchStorage(unittest.TestCase):
 
         self.assertEqual(ex.exception.msg, ERROR_INDEX_NOT_VALID_NAME)
 
+    def test_set_alias(self):
+        """Test whether an alias is set"""
+
+        self.index = INDEX_NAME
+        storage = ElasticsearchStorage(self.es_url)
+
+        storage.create_index(self.index, PERCEVAL_MAPPING)
+        self.assertFalse(storage.elasticsearch.indices.exists(index=INDEX_ALIAS))
+        storage.set_alias(INDEX_ALIAS, INDEX_NAME)
+        self.assertTrue(storage.elasticsearch.indices.exists(index=INDEX_ALIAS))
+
+    def test_set_alias_error(self):
+        """Test whether a StorageEngineError error is thrown when the alias is not set"""
+
+        self.index = INDEX_NAME
+        storage = ElasticsearchStorage(self.es_url)
+
+        storage.create_index(self.index, PERCEVAL_MAPPING)
+        self.assertFalse(storage.elasticsearch.indices.exists(index=INDEX_ALIAS))
+
+        with self.assertRaises(StorageEngineError) as ex:
+            storage.set_alias(INDEX_NAME, INDEX_NAME)
+
+        self.assertEqual(ex.exception.msg, ERROR_ALIAS_IN_USE)
+
     def test_write(self):
         """Test whether items are written to the index"""
 
@@ -121,70 +237,50 @@ class TestElasticsearchStorage(unittest.TestCase):
         data = read_file('data/perceval_data.json')
         data_json = json.loads(data)
 
-        written = storage.write(self.index, data_json, 5)
+        written = storage.write(self.index, data_json, chunk_size=5)
 
-        query = storage.elasticsearch.count(index=self.index,
-                                            doc_type=storage.ITEMS_TYPE,
-                                            body=QUERY_MATCH_ALL)
+        query = storage.elasticsearch.search(index=self.index,
+                                             doc_type=storage.ITEMS,
+                                             body=QUERY_MATCH_ALL,
+                                             size=100)
+        hits = query['hits']['hits']
 
         self.assertEqual(written, len(data_json))
-        self.assertEqual(written, query['count'])
+        self.assertEqual(written, len(hits))
+
+    def test_write_field_id(self):
+        """Test whether items are written to the index when `field_id` is set"""
+
+        self.index = INDEX_NAME
+        storage = ElasticsearchStorage(self.es_url)
+        storage.create_index(self.index, PERCEVAL_MAPPING)
+
+        data = read_file('data/perceval_data.json')
+        data_json = json.loads(data)
+
+        storage.write(self.index, data_json, chunk_size=5, field_id='uuid')
+
+        query = storage.elasticsearch.search(index=self.index,
+                                             doc_type=storage.ITEMS,
+                                             body=QUERY_MATCH_ALL,
+                                             size=100)
+
+        for hit in query['hits']['hits']:
+            self.assertEqual(hit['_id'], hit['_source']['uuid'])
 
     def test_write_wrong(self):
         """Test whether a StorageEngine error is thrown when an item is not written"""
 
-        mapping = """
-        {
-          "mappings": {
-            "items": {
-                "dynamic": false,
-                "properties": {
-                    "backend_name" : {
-                        "type" : "keyword"
-                    },
-                    "backend_version" : {
-                        "type" : "keyword"
-                    },
-                    "category" : {
-                        "type" : "keyword"
-                    },
-                    "data" : {
-                        "properties":{}
-                    },
-                    "origin" : {
-                        "type" : "keyword"
-                    },
-                    "perceval_version" : {
-                        "type" : "keyword"
-                    },
-                    "tag" : {
-                        "type" : "keyword"
-                    },
-                    "timestamp" : {
-                        "type" : "long"
-                    },
-                    "updated_on" : {
-                        "type" : "long"
-                    },
-                    "uuid" : {
-                        "type" : "keyword"
-                    }
-                }
-            }
-          }
-        }
-        """
-
         self.index = INDEX_NAME
         storage = ElasticsearchStorage(self.es_url)
-        storage.create_index(self.index, mapping)
+        storage.create_index(self.index, PERCEVAL_MAPPING_WRONG)
 
         # load JSON with an attribute exceeding 32766 bytes
         data = read_file('data/perceval_data_wrong.json')
         data_json = json.loads(data)
 
         with self.assertRaises(StorageEngineError) as ex:
-            storage.write(self.index, data_json, 5)
+            storage.write(self.index, data_json, chunk_size=5)
 
         self.assertIn(ERROR_WRITE_IMMENSE_TERM, ex.exception.msg)
 

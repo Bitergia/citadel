@@ -32,52 +32,6 @@ from citadel.errors import StorageEngineError
 
 urllib3.disable_warnings()
 
-
-PERCEVAL_MAPPING = """
-    {
-      "mappings": {
-        "items": {
-            "dynamic": false,
-            "properties": {
-                "backend_name" : {
-                    "type" : "keyword"
-                },
-                "backend_version" : {
-                    "type" : "keyword"
-                },
-                "category" : {
-                    "type" : "keyword"
-                },
-                "classified_fields_filtered" : {
-                    "type" : "keyword"
-                },
-                "data" : {
-                    "properties":{}
-                },
-                "origin" : {
-                    "type" : "keyword"
-                },
-                "perceval_version" : {
-                    "type" : "keyword"
-                },
-                "tag" : {
-                    "type" : "keyword"
-                },
-                "timestamp" : {
-                    "type" : "long"
-                },
-                "updated_on" : {
-                    "type" : "long"
-                },
-                "uuid" : {
-                    "type" : "keyword"
-                }
-            }
-        }
-      }
-    }
-    """
-
 logger = logging.getLogger(__name__)
 
 
@@ -88,7 +42,7 @@ class ElasticsearchStorage(StorageEngine):
 
     :param url: ElasticSearch URL
     """
-    ITEMS_TYPE = 'items'
+    ITEMS = 'items'
 
     TIMEOUT = 3600
     MAX_RETRIES = 50
@@ -105,6 +59,26 @@ class ElasticsearchStorage(StorageEngine):
                                            retry_on_timeout=self.RETRY_ON_TIMEOUT,
                                            verify_certs=self.VERIFY_CERTS,
                                            connection_class=RequestsHttpConnection)
+
+    def set_alias(self, alias, index_name):
+        """Set an alias for a given index.
+
+        :param alias: name of the alias
+        :param index_name: name of the index
+        """
+        try:
+            self.elasticsearch.indices.update_aliases(
+                {
+                    "actions": [
+                        {"add": {"index": index_name, "alias": alias}}
+                    ]
+                }
+            )
+        except es_exceptions.RequestError as ex:
+            info_error = ex.info['error']
+            msg = "Alias {} not set, {}, {}".format(index_name, info_error['type'], info_error['reason'])
+            logger.error(msg)
+            raise StorageEngineError(cause=msg)
 
     def create_index(self, index_name, mapping):
         """Create an index in ElasticSearch database.
@@ -130,12 +104,15 @@ class ElasticsearchStorage(StorageEngine):
             logger.error(msg)
             raise StorageEngineError(cause=msg)
 
-    def write(self, resource, data, chunk_size=CHUNK_SIZE):
+    def write(self, resource, data, item_type=ITEMS, chunk_size=CHUNK_SIZE, field_id=None):
         """Write the `data` in bulks of `chunk_size` to the index `resource`.
 
         :param resource: index name
         :param data: data to be written
+        :param item_type: type of the item
         :param chunk_size: chunk size data
+        :param field_id: field representing the ID of the item. If None the
+            ID generation is delegated to ElasticSearch
 
         :return: number of written items
 
@@ -146,10 +123,13 @@ class ElasticsearchStorage(StorageEngine):
             for item in items:
                 es_item = {
                     '_index': resource,
-                    '_type': self.ITEMS_TYPE,
-                    '_id': item['uuid'],
+                    '_type': item_type,
                     '_source': item
                 }
+
+                if field_id:
+                    es_item['_id'] = item[field_id]
+
                 yield es_item
 
         written = 0
