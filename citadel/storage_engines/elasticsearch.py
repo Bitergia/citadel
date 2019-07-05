@@ -88,7 +88,7 @@ class ElasticsearchStorage(StorageEngine):
 
     :param url: ElasticSearch URL
     """
-    ITEMS_TYPE = 'items'
+    ITEMS = 'items'
 
     TIMEOUT = 3600
     MAX_RETRIES = 50
@@ -130,12 +130,15 @@ class ElasticsearchStorage(StorageEngine):
             logger.error(msg)
             raise StorageEngineError(cause=msg)
 
-    def write(self, resource, data, chunk_size=CHUNK_SIZE):
+    def write(self, resource, data, item_type=ITEMS, chunk_size=CHUNK_SIZE, field_id=None):
         """Write the `data` in bulks of `chunk_size` to the index `resource`.
 
         :param resource: index name
         :param data: data to be written
+        :param item_type: type of the item
         :param chunk_size: chunk size data
+        :param field_id: field representing the ID of the item. If None the
+            ID generation is delegated to ElasticSearch
 
         :return: number of written items
 
@@ -146,10 +149,13 @@ class ElasticsearchStorage(StorageEngine):
             for item in items:
                 es_item = {
                     '_index': resource,
-                    '_type': self.ITEMS_TYPE,
-                    '_id': item['uuid'],
+                    '_type': item_type,
                     '_source': item
                 }
+
+                if field_id:
+                    es_item['_id'] = item[field_id]
+
                 yield es_item
 
         written = 0

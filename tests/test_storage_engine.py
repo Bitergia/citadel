@@ -33,7 +33,7 @@ class TestStorageEngine(unittest.TestCase):
         e = StorageEngine()
 
         with self.assertRaises(NotImplementedError):
-            e.write("storage", data=None)
+            e.write("storage", item_type='items', data=None)
 
 
 if __name__ == "__main__":
