@@ -1,0 +1,42 @@
+- Results details:
+
+# A) events index write-only
+Repo https://github.com/elastic/elasticsearch processed: time 00:04:43, events 85190
+Repo https://github.com/elastic/elasticsearch processed: time 00:04:44, events 85190
+Repo https://github.com/elastic/elasticsearch processed: time 00:04:28, events 85190
+
+# B) events index write-only, lookups write-and-update
+Repo https://github.com/elastic/elasticsearch processed: time 00:05:51, events 85190
+Repo https://github.com/elastic/elasticsearch processed: time 00:05:27, events 85190
+Repo https://github.com/elastic/elasticsearch processed: time 00:05:23, events 85190
+
+# C) events index write-and-update (no items mod)
+Repo https://github.com/elastic/elasticsearch processed: time 00:04:32, events 85190
+Repo https://github.com/elastic/elasticsearch processed: time 00:04:30, events 85190
+Repo https://github.com/elastic/elasticsearch processed: time 00:04:29, events 85190
+
+# D) events index write-and-update (items mod)
+Repo https://github.com/elastic/elasticsearch processed: time 00:05:06, events 85190
+Repo https://github.com/elastic/elasticsearch processed: time 00:04:53, events 85190
+Repo https://github.com/elastic/elasticsearch processed: time 00:04:46, events 85190
+
+
+- Discussions:
+4 tests have been conducted to evaluate approaches to save data to ElasticSearch, they are described below.
+
+The approach A consists in writing Perceval items to an index, leaving ElasticSearch the responsability
+to assign unique identifiers, thus Perceval items with the same `uuid` are indexed more than once.
+
+The approach B extends the approach A by keeping the metadata information within a separated index in order
+to know the latest time information (i.e., `metadata_timestamp`, `metadata_updated_on`) of a given Perceval item.
+As can be seen from the results, this extra step decreases the performance of around 20%.
+
+The approach C consists in writing Perceval items to an index, however the unique identifiers are set using
+the Perceval `uuid` values. Thus, the operations performed on the index concern writing and updates, since
+the same item may be retrieved several times. In this case the performance is better then approach A, since
+the documents used to test this approach are not modified, thus it is possible that Lucene performs some
+optimization and do notreindexed them again.
+
+The approach D is similar to the approach C, but the documents are modified. As can be seen, this approach
+performs worse than the approach A (around 6%)
+
