@@ -32,52 +32,6 @@ from citadel.errors import StorageEngineError
 
 urllib3.disable_warnings()
 
-
-PERCEVAL_MAPPING = """
-    {
-      "mappings": {
-        "items": {
-            "dynamic": false,
-            "properties": {
-                "backend_name" : {
-                    "type" : "keyword"
-                },
-                "backend_version" : {
-                    "type" : "keyword"
-                },
-                "category" : {
-                    "type" : "keyword"
-                },
-                "classified_fields_filtered" : {
-                    "type" : "keyword"
-                },
-                "data" : {
-                    "properties":{}
-                },
-                "origin" : {
-                    "type" : "keyword"
-                },
-                "perceval_version" : {
-                    "type" : "keyword"
-                },
-                "tag" : {
-                    "type" : "keyword"
-                },
-                "timestamp" : {
-                    "type" : "long"
-                },
-                "updated_on" : {
-                    "type" : "long"
-                },
-                "uuid" : {
-                    "type" : "keyword"
-                }
-            }
-        }
-      }
-    }
-    """
-
 logger = logging.getLogger(__name__)
 
 
